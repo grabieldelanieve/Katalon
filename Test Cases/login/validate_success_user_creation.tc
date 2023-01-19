@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>validate_success_user_creation</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>4fd6b22d-dc8f-4886-b1a4-7cd68910f41d</testCaseGuid>
+</TestCaseEntity>
