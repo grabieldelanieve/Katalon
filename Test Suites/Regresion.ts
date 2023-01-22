@@ -22,7 +22,7 @@
       <guid>39fc7e6d-9561-4af7-a84f-491e7d257066</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/login/validate_success_user_creation</testCaseId>
+      <testCaseId>Test Cases/login/validate_success_user_login</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
 </TestSuiteEntity>
