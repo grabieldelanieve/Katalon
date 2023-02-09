@@ -19,4 +19,14 @@
       <initValue>'admin123'</initValue>
       <name>Password</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'ramonruiz'</initValue>
+      <name>orangeUserName</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'ramonruiz7'</initValue>
+      <name>orangeUserName2</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

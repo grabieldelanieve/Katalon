@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>pruebas</name>
+   <name>validate_success_user_edit</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>cddab767-7ebd-4964-8acd-154fccd9952e</testCaseGuid>
+   <testCaseGuid>29c00f90-2b90-4066-b177-4c175c4578d8</testCaseGuid>
 </TestCaseEntity>

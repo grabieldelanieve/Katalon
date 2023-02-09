@@ -18,6 +18,7 @@ import org.openqa.selenium.Keys as Keys
 //Imports utilizados y necesarios 
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
+import commons.Util as Util
 
 // Abriendo el navegador...
 WebUI.openBrowser('')
@@ -39,12 +40,15 @@ if (WebUI.verifyElementPresent(findTestObject('Object Repository/login/label_log
         //Ingresando texto al input User Name
         WebUI.setText(findTestObject('Object Repository/login/input_username_login_screen'), GlobalVariable.Username)
 
+        WebUI.click(findTestObject('Object Repository/login/input_username_login_screen'))
+
         WebUI.takeScreenshot()
 
         //Validando que el objeto de prueba (Input password) esta en pantalla
         if (WebUI.verifyElementPresent(findTestObject('Object Repository/login/input_password_login_screen'), 1, FailureHandling.STOP_ON_FAILURE)) {
             //Ingresando texto al input Password
-            WebUI.setText(findTestObject('Object Repository/login/input_password_login_screen'), GlobalVariable.Password)
+            //            WebUI.setText(findTestObject('Object Repository/login/input_password_login_screen'), GlobalVariable.Password)
+            Util.setTextElement(findTestObject('Object Repository/login/input_password_login_screen'), GlobalVariable.Password)
 
             WebUI.takeScreenshot()
 
@@ -62,32 +66,37 @@ if (WebUI.verifyElementPresent(findTestObject('Object Repository/login/label_log
 
                     //Marcando que el caso de prueba concluyo de manera exitosa
                     KeywordUtil.markPassed('Result as expected!!') //Calling the new test case
+                        
 
-					// Llamada a caso de prueba agregar usuario. NOTA: deberia ser uno generico del dashboard, para usarlo genericamente.
-                    WebUI.callTestCase(findTestCase('admin/validate_suscces_user_creation'), [:], FailureHandling.STOP_ON_FAILURE)
-                } else {
-					//Marcando que el caso de prueba como error
+                    // Llamada a caso de prueba agregar usuario. NOTA: deberia ser uno generico del dashboard, para usarlo genericamente.
+//                    WebUI.callTestCase(findTestCase('admin/validate_success_user_creation'), [:], FailureHandling.STOP_ON_FAILURE)
+//					WebUI.delay(4)
+//                    WebUI.callTestCase(findTestCase('admin/validate_success_user_edit'), [:], FailureHandling.STOP_ON_FAILURE)
+//					WebUI.delay(4)
+//                    WebUI.callTestCase(findTestCase('admin/validate_success_user_delete'), [:], FailureHandling.STOP_ON_FAILURE) 
+//					WebUI.delay(4)
+                } //Marcando que el caso de prueba como error
+                else {
                     KeywordUtil.markError('No pudo ingresar a la pantalla del (Dashboard)')
                 }
-                //Marcando que el caso de prueba como error
-            } else {
+            } //Marcando que el caso de prueba como error
+            else {
                 KeywordUtil.markError('El elemento del DOM HTML (Boton login) no esta en pantalla')
             }
-            //Marcando que el caso de prueba como error
-        } else {
+        } //Marcando que el caso de prueba como error
+        else {
             KeywordUtil.markError('El elemento del DOM HTML (Input Password) no esta en pantalla')
         }
-        //Marcando que el caso de prueba como error
-    } else {
+    } //Marcando que el caso de prueba como error
+    else {
         KeywordUtil.markError('El elemento del DOM HTML (Input User name) no esta en pantalla')
     }
-    //Marcando que el caso de prueba como error
 } else {
     KeywordUtil.markError('El elemento del DOM HTML (Login) no esta en pantalla')
 }
 
-WebUI.delay(3)
-
 // Cerrando navegador
-WebUI.closeBrowser()
+//WebUI.closeBrowser()
+
+
 

@@ -10,24 +10,29 @@ import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
-import com.kms.katalon.core.testobject.TestObject
-import com.kms.katalon.core.util.KeywordUtil
+import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import commons.Util as Util
+import constants.Enum.ElementosOrange as ElementosOrange
 
-import org.openqa.selenium.WebElement
+WebUI.callTestCase(findTestCase('login/validate_success_user_login'), [:], FailureHandling.STOP_ON_FAILURE)
 
+Util.clickElement(ElementosOrange.GLOBAL_MENU_ADMIN.getObject)
 
-WebUI.openBrowser('https://katalon-demo-cura.herokuapp.com/')
-// Wait for the browser to be stable
+WebUI.callTestCase(findTestCase('admin/validate_success_user_search'), [('KEY1') : GlobalVariable.orangeUserName], FailureHandling.STOP_ON_FAILURE)
+
+Util.clickElement(ElementosOrange.BUTTON_EDIT_EDIT.getObject)
+
+Util.setTextElement(ElementosOrange.INPUT_EDIT_USER_NAME.getObject, '7')
+
+Util.clickElement(ElementosOrange.BUTTON_EDIT_SAVE.getObject)
+
+//Validar que estoy en la pantalla donde vere los resultados de la edicion
 WebUI.delay(3)
+WebUI.verifyElementPresent(ElementosOrange.DIV_ADMIN_RECORDS_FOUNDS.getObject, 2, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.scrollToElement(findTestObject('icon_Social_networking'), 0)
-TestObject testObj = findTestObject('icon_Social_networking')
-List<WebElement> elements = WebUI.findWebElements(testObj, 10)
-for (int i = 0;  i < elements.size(); ++i) {
-	KeywordUtil.logInfo(elements.get(i).toString())
-}
+

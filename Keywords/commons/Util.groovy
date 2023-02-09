@@ -25,6 +25,7 @@ import org.openqa.selenium.WebElement
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.By
 
+
 import com.kms.katalon.core.mobile.keyword.internal.MobileDriverFactory
 import com.kms.katalon.core.webui.driver.DriverFactory
 
@@ -44,19 +45,34 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 public class Util {
 
 	public static Boolean flag = null;
+	// Declarando variable de tipo de la clase para instancia
+	private static Util instance = null;
 
+
+	// Constructor
+	private static Util getInstance() {
+		/** Si no tenemos ninguna instancia creada en memoria,
+		 creara una nueva instancia **/ 
+		if(instance == null) {
+			instance = new Util();
+		}
+		/** Si ya cuenta con alguna instancia la retornara,
+		 no creara una siempre que se llame la clase **/
+		return instance;
+	}
 
 	public static void clickElement(TestObject to) {
 
 		try {
-			WebElement element = WebUiBuiltInKeywords.findWebElement(to);
+			//			WebElement element = WebUiBuiltInKeywords.findWebElement(to);
 			//Ternary Operator
 			flag = (WebUI.verifyElementPresent(to, 3)) ? true : false
 
 			if(flag != true) KeywordUtil.markFailedAndStop("")
 
 			KeywordUtil.logInfo("Clicking element")
-			element.click()
+			//			element.click()
+			WebUI.click(to, FailureHandling.STOP_ON_FAILURE)
 			KeywordUtil.markPassed("Element has been clicked")
 		} catch (WebElementNotFoundException e) {
 			KeywordUtil.markFailedAndStop("Element not found")
@@ -101,7 +117,7 @@ public class Util {
 
 
 	//Getting inner text from HTML element
-	public String gettingText(TestObject to) {
+	public static String gettingText(TestObject to) {
 		try {
 
 			String innerTextHTML = WebUI.getText(to)
@@ -117,29 +133,42 @@ public class Util {
 	}
 
 
-	public void compareText(TestObject to, String str) {
-
-		String textCaptured = gettingText(to)
-		int g = null;
+	public static Boolean compareText(TestObject to, String str) {
 
 		try {
-			if(textCaptured != null)  g = gettingText(to).compareTo(str)
-			if(g.equals(0)) {
+			if(gettingText(to) == str) {
 				KeywordUtil.logInfo("Text as expected")
+				return true;
 			} else {
 				KeywordUtil.markFailed("The text is not the same as expected")
+				return false;
 			}
 		} catch(WebElementNotFoundException e) {
 			KeywordUtil.markFailedAndStop(e.getMessage())
 		} catch(Exception e) {
-
+			KeywordUtil.markFailedAndStop(e.getMessage())
 		}
 	}
-	
-	
+
+
 	private static int randomNumber(int maxNumber) {
 		Random random = new Random();
 		int rNumber = random.nextInt(maxNumber)
 		return rNumber;
+	}
+
+
+	private static void userSearcherByUsername (TestObject obj, String usern, TestObject btnsearch) {
+		try {
+
+			setTextElement(obj, usern)
+			clickElement(btnsearch)
+
+
+		} catch (WebElementNotFoundException e) {
+
+		} catch (Exception e) {
+
+		}
 	}
 }

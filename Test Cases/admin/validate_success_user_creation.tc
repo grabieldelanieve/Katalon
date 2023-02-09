@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>validate_suscces_user_creation</name>
+   <name>validate_success_user_creation</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>ff5ed719-279d-4f43-820d-5157b32420ec</testCaseGuid>

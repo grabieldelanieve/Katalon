@@ -1,0 +1,14 @@
+{
+  "keywordFileContentHash": "C6427777004EFC483B929CD324CB3A20",
+  "keywordClasses": [
+    {
+      "name": "constants.Enum",
+      "keywordMethods": []
+    },
+    {
+      "name": "constants.Enum$ElementosOrange",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": false
+}
