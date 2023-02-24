@@ -26,7 +26,7 @@ public class Enum {
 	private static TestObject to;
 
 	public enum ElementosOrange {
-		BUTTON_EDIT_SAVE("//*[@type='submit'][contains(.,'Save')]"),
+		BUTTON_EDIT_SAVE("//button[(contains(@class, 'orangehrm')) and contains(., 'Save')]"),
 		BUTTON_EDIT_EDIT("(//button[contains(@class,'oxd-icon-button oxd-table-cell-action-space')])[2]"),
 		BUTTON_TABLE_DELETE("(//button[contains(@class,'oxd-icon-button oxd-table-cell-action-space')])[1]"),
 		BUTTON_DELETE_DELETE("//button[contains(@class,'oxd-button oxd-button--medium oxd-button--label-danger orangehrm-button-margin')]"),

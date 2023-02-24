@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "C6427777004EFC483B929CD324CB3A20",
+  "keywordFileContentHash": "4E69C647A9A2839DD9E74DAE3DA4AB7B",
   "keywordClasses": [
     {
       "name": "constants.Enum",
@@ -10,5 +10,5 @@
       "keywordMethods": []
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }

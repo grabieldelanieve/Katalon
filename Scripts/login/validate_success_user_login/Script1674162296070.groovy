@@ -19,7 +19,7 @@ import org.openqa.selenium.Keys as Keys
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import commons.Util as Util
-
+import commons.Util
 // Abriendo el navegador...
 WebUI.openBrowser('')
 
@@ -38,9 +38,7 @@ if (WebUI.verifyElementPresent(findTestObject('Object Repository/login/label_log
     //Validando que el objeto de prueba (Input User Name) esta en pantalla
     if (WebUI.verifyElementPresent(findTestObject('Object Repository/login/input_username_login_screen'), 1, FailureHandling.STOP_ON_FAILURE)) {
         //Ingresando texto al input User Name
-        WebUI.setText(findTestObject('Object Repository/login/input_username_login_screen'), GlobalVariable.Username)
-
-        WebUI.click(findTestObject('Object Repository/login/input_username_login_screen'))
+        Util.getInstance().setTextElement(findTestObject('Object Repository/login/input_username_login_screen'), GlobalVariable.Username)
 
         WebUI.takeScreenshot()
 
@@ -48,7 +46,7 @@ if (WebUI.verifyElementPresent(findTestObject('Object Repository/login/label_log
         if (WebUI.verifyElementPresent(findTestObject('Object Repository/login/input_password_login_screen'), 1, FailureHandling.STOP_ON_FAILURE)) {
             //Ingresando texto al input Password
             //            WebUI.setText(findTestObject('Object Repository/login/input_password_login_screen'), GlobalVariable.Password)
-            Util.setTextElement(findTestObject('Object Repository/login/input_password_login_screen'), GlobalVariable.Password)
+            Util.getInstance().setTextElement(findTestObject('Object Repository/login/input_password_login_screen'), GlobalVariable.Password)
 
             WebUI.takeScreenshot()
 
@@ -57,7 +55,7 @@ if (WebUI.verifyElementPresent(findTestObject('Object Repository/login/label_log
                 WebUI.takeScreenshot()
 
                 //Haciendo evento de clic en el objeto de prueba (Boton login)
-                WebUI.click(findTestObject('Object Repository/login/button_login'))
+                Util.getInstance().clickElement(findTestObject('Object Repository/login/button_login'))
 
                 //Validando que estamos en la siguiente pantalla (Dashboard), verificando con un objeto de la misma
                 if (WebUI.verifyElementPresent(findTestObject('Object Repository/dashboard/label_dashboard_screen'), 1, 

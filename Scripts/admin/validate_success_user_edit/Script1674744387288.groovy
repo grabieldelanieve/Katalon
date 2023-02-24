@@ -21,15 +21,17 @@ import constants.Enum.ElementosOrange as ElementosOrange
 
 WebUI.callTestCase(findTestCase('login/validate_success_user_login'), [:], FailureHandling.STOP_ON_FAILURE)
 
-Util.clickElement(ElementosOrange.GLOBAL_MENU_ADMIN.getObject)
+Util.getInstance().clickElement(ElementosOrange.GLOBAL_MENU_ADMIN.getObject)
 
 WebUI.callTestCase(findTestCase('admin/validate_success_user_search'), [('KEY1') : GlobalVariable.orangeUserName], FailureHandling.STOP_ON_FAILURE)
 
-Util.clickElement(ElementosOrange.BUTTON_EDIT_EDIT.getObject)
+Util.getInstance().clickElement(ElementosOrange.BUTTON_EDIT_EDIT.getObject)
 
-Util.setTextElement(ElementosOrange.INPUT_EDIT_USER_NAME.getObject, '7')
+Util.getInstance().clearInput(ElementosOrange.INPUT_EDIT_USER_NAME.getObject)
 
-Util.clickElement(ElementosOrange.BUTTON_EDIT_SAVE.getObject)
+Util.getInstance().setTextElement(ElementosOrange.INPUT_EDIT_USER_NAME.getObject, 'ramonruiz7')
+
+Util.getInstance().clickElement(ElementosOrange.BUTTON_EDIT_SAVE.getObject)
 
 //Validar que estoy en la pantalla donde vere los resultados de la edicion
 WebUI.delay(3)

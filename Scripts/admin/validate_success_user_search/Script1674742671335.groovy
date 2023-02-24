@@ -21,9 +21,6 @@ import internal.GlobalVariable as GlobalVariable
 import commons.Util as Util
 import constants.Enum.ElementosOrange as ElementosOrange
 
-Util.userSearcherByUsername(ElementosOrange.INPUT_ADMIN_SEARCH.getObject, KEY1, ElementosOrange.BUTTON_ADMIN_SEARCH.getObject)
+Util.getInstance().userSearcherByUsername(ElementosOrange.INPUT_ADMIN_SEARCH.getObject, KEY1, ElementosOrange.BUTTON_ADMIN_SEARCH.getObject)
 
 WebUI.scrollToElement(findTestObject('Object Repository/admin/user_search/span_no_records_found'), 2)
-
-
-

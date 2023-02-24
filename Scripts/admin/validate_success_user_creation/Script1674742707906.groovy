@@ -33,32 +33,32 @@ WebUI.callTestCase(findTestCase('login/validate_success_user_login'), [:], Failu
 //WebUI.callTestCase(TestCase.VALIDATE_SUCCESS_USER_LOGIN, [:], FailureHandling.STOP_ON_FAILURE)
 
 //Completando formulario
-Util.clickElement(ElementosOrange.GLOBAL_MENU_ADMIN.getObject) //Util.getInstance().clickElement(ElementosOrange.GLOBAL_MENU_ADMIN.getObject)
+Util.getInstance().clickElement(ElementosOrange.GLOBAL_MENU_ADMIN.getObject) //Util.getInstance().clickElement(ElementosOrange.GLOBAL_MENU_ADMIN.getObject)
 
-Util.clickElement(ElementosOrange.BUTTON_ADMIN_ADD.getObject)
+Util.getInstance().clickElement(ElementosOrange.BUTTON_ADMIN_ADD.getObject)
 
-Util.clickElement(ElementosOrange.DROPDOWN_USER_ROLE.getObject)
+Util.getInstance().clickElement(ElementosOrange.DROPDOWN_USER_ROLE.getObject)
 
-Util.clickElement(ElementosOrange.DROPDOWN_USER_ROLE_ADMIN.getObject)
+Util.getInstance().clickElement(ElementosOrange.DROPDOWN_USER_ROLE_ADMIN.getObject)
 
-Util.clickElement(ElementosOrange.DROPDOWN_USER_STATUS.getObject)
+Util.getInstance().clickElement(ElementosOrange.DROPDOWN_USER_STATUS.getObject)
 
-Util.clickElement(ElementosOrange.DROPDOWN_USER_STATUS_ENABLED.getObject)
+Util.getInstance().clickElement(ElementosOrange.DROPDOWN_USER_STATUS_ENABLED.getObject)
 
-Util.setTextElement(ElementosOrange.INPUT_EMPLOYEE_NAME.getObject, "Paul Collings") //Odis Adalwin
+Util.getInstance().setTextElement(ElementosOrange.INPUT_EMPLOYEE_NAME.getObject, "Odis Adalwin") //Odis Adalwin
 
-Util.clickElement(ElementosOrange.INPUT_EMPLOYEE_NAME_SELECTED.getObject)
+Util.getInstance().clickElement(ElementosOrange.INPUT_EMPLOYEE_NAME_SELECTED.getObject)
 
-Util.setTextElement(ElementosOrange.INPUT_USER_NAME.getObject, 'ramonruiz')
+Util.getInstance().setTextElement(ElementosOrange.INPUT_USER_NAME.getObject, 'ramonruiz')
 
-Util.setTextElement(ElementosOrange.INPUT_PASSWORD.getObject, 'Delanieve7!')
+Util.getInstance().setTextElement(ElementosOrange.INPUT_PASSWORD.getObject, 'Delanieve7!')
 
-Util.setTextElement(ElementosOrange.INPUT_CONFIRM_PASSWORD.getObject, 'Delanieve7!')
+Util.getInstance().setTextElement(ElementosOrange.INPUT_CONFIRM_PASSWORD.getObject, 'Delanieve7!')
 
 WebUI.scrollToElement(ElementosOrange.BUTTON_EDIT_SAVE.getObject, 1, FailureHandling.STOP_ON_FAILURE)
 
 //Guardando informacion
-Util.clickElement(ElementosOrange.BUTTON_EDIT_SAVE.getObject)
+Util.getInstance().clickElement(ElementosOrange.BUTTON_EDIT_SAVE.getObject)
 
 WebUI.delay(4)
 

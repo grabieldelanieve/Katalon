@@ -1,10 +1,10 @@
 {
-  "keywordFileContentHash": "FF0C955001BE464894C74BC0AC3E2008",
+  "keywordFileContentHash": "A48325ED6DC51706821BE2E608F7D263",
   "keywordClasses": [
     {
       "name": "constants.StringConstants",
       "keywordMethods": []
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

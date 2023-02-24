@@ -1,10 +1,10 @@
 {
-  "keywordFileContentHash": "2AA524D396614027FC26EEEE43BCE6CC",
+  "keywordFileContentHash": "7FAF3BBA47669E5825246A7388585C10",
   "keywordClasses": [
     {
       "name": "commons.Util",
       "keywordMethods": []
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }
