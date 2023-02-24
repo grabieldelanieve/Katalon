@@ -16,16 +16,17 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import commons.Util
 
+import commons.Util
+import constants.TestCasesConstants
 import constants.Enum.ElementosOrange
 
-WebUI.callTestCase(findTestCase('login/validate_success_user_login'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(TestCasesConstants.VALIDATE_SUCCESS_USER_LOGIN, [:], FailureHandling.STOP_ON_FAILURE)
 
-Util.clickElement(ElementosOrange.GLOBAL_MENU_ADMIN.getObject)
+Util.getInstance().clickElement(ElementosOrange.GLOBAL_MENU_ADMIN.getObject)
 
-WebUI.callTestCase(findTestCase('admin/validate_success_user_search'), [('KEY1'):GlobalVariable.orangeUserName2], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(TestCasesConstants.VALIDATE_SUCCESS_USER_SEARCH, [('KEY1'):GlobalVariable.orangeUserName2], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.scrollToElement(ElementosOrange.BUTTON_TABLE_DELETE.getObject, 2)
-Util.clickElement(ElementosOrange.BUTTON_TABLE_DELETE.getObject)
-Util.clickElement(ElementosOrange.BUTTON_DELETE_DELETE.getObject)
+Util.getInstance().clickElement(ElementosOrange.BUTTON_TABLE_DELETE.getObject)
+Util.getInstance().clickElement(ElementosOrange.BUTTON_DELETE_DELETE.getObject)

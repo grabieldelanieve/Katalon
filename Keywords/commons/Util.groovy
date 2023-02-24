@@ -41,6 +41,7 @@ import com.kms.katalon.core.webui.exception.WebElementNotFoundException
 
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
+import org.openqa.selenium.Keys as Keys
 
 public class Util {
 
@@ -59,6 +60,10 @@ public class Util {
 		/** Si ya cuenta con alguna instancia la retornara,
 		 no creara una siempre que se llame la clase **/
 		return instance;
+	}
+
+	public static void clearInput(TestObject xpath) {
+		WebUI.sendKeys(xpath, Keys.chord(Keys.SHIFT, Keys.ARROW_UP, Keys.BACK_SPACE))
 	}
 
 	public static void clickElement(TestObject to) {
